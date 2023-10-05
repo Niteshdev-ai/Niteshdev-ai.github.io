@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>W-INNINGS</title>
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/jquery-countdown/jquery.countdown.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <link href="assets/css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript">
+            var email= sessionStorage.getItem("email");
+            if(email!="")
+            {
+                var xmlhttp = new XMLHttpRequest();
+            var url="https://opensheet.elk.sh/1g1WZaN364IJv2vYVYtT02sOmhSzNRuxGRJasG2Qex3s/Submission";
+            //var url="https://opensheet.vercel.app/1hgZbLds4YlSrp8jcGFSZSRDhd87SI_yBepOMTRh8cnk/Submission";
+            xmlhttp.open("GET",url);
+            xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                var i,store;
+                for (i = data.length-1 ; i >=0; i--) {
+                    if(email== data[i]["email"]){
+                        store=i;
+                        break;
+                    }
+                    }
+                    var Player1=data[store]["Player 11"];
+                    var Player2=data[store]["Player 10"];
+                    var Player3=data[store]["Player 1"];
+                    var Player4=data[store]["Player 2"];
+                    var Player5=data[store]["Player 3"];
+                    var Player6=data[store]["Player 4"];
+                    var Player7=data[store]["Player 5"];
+                    var Player8=data[store]["Player 6"];
+                    var Player9=data[store]["Player 7"];
+                    var Player10=data[store]["Player 8"];
+                    var Player11=data[store]["Player 9"];
+                    var Captain=data[store]["Captain"];
+                    console.log(data[store]);
+                    document.getElementById("table1").innerHTML +=
+                                                    "<tr>" + "<td class=\"text-center\">" + Player1 + "</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player2 + "</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player3 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player4 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player5 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player6 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player7 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player8 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player9 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player10 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" + Player11 +"</td>"+
+                                                    "<tr>" + "<td class=\"text-center\">" +"Captain: " + Captain +"</td>"+ "</tr>";
+                }
+                };
+
+                    xmlhttp.send(null);
+
+            }
+            else{
+                alert("Team not found! Make another submission");
+            }
+
+            
+        </script>
+        </head>
+        <body style=" min-width: 100%;">
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+                        ☰
+                    </button>
+
+                    <div class="collapse navbar-toggleable-sm" id="collapsingNavbar2">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./matches.html">List of Matches</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Leaderboards
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="./leaderboard.html">MatchDay Leaderboard</a>
+                                  <a class="dropdown-item" href="./weeklyleaderboard.html">Weekly Leaderboard</a>
+                                  <a class="dropdown-item" href="./overallleaderboard.html">Overall Leaderboard</a>
+                                </div>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="./Submit.html">Submit Team</a>
+                                </li>
+                            </ul>
+                    </div>
+
+
+
+
+                <a class="navbar-brand" href="#">
+                    <img src=".\assets\img\iimasr.png" width="55" height="55" alt="">
+                  </a>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./matches.html">List of Matches</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Leaderboards
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="./leaderboard.html">MatchDay Leaderboard</a>
+                        <a class="dropdown-item" href="./weeklyleaderboard.html">Weekly Leaderboard</a>
+                        <a class="dropdown-item" href="./overallleaderboard.html">Overall Leaderboard</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Submit.html">Submit Team</a>
+                      </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <a class="navbar-brand" href="#">
+                        <img src=".\assets\img\abc.png" width="80" height="50" alt="">
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src=".\assets\img\sportscomm.png" width="50" height="50" alt="">
+                      </a>
+                      
+                  </form>
+                </div>
+            </div>
+              </nav>
+
+
+              <br\>
+              <br\>
+                <center>
+                    <div class="container">
+                        <br>
+                      <br>
+                      <table class="table table-dark table-striped" style="width:100%">
+                          <thead>
+                            <tr>
+                                <th class="text-center">Player</th>
+                            </tr>
+                          </thead>
+                          <tbody id="table1"></tbody>
+                          </table>
+      
+                    </div>
+      
+                </center>
+              
+              
+</body>
+</html>

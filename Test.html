@@ -1,0 +1,32 @@
+<html>
+  <body>
+   <input type="text" name="name" class="form-control" id="name"  />
+   <input type="text" name="email" class="form-control" id="email"  />
+   <input type="text" name="subject" class="form-control" id="subject"  />
+   <input type="text" name="message" class="form-control" id="message"  /> 
+   <button onclick="insert_value()">++</button>
+  </body>
+
+
+  <script>
+
+    var script_url ="https://script.google.com/a/macros/iimamritsar.ac.in/s/AKfycbyVTO_wXFQjHN7n1G-zIX3bV0ciMzY_aO7nOYyTnlHbCxYGvUesVmpsrDT1GWTHdTgL8w/exec";
+  var emailcheck=false;
+  // Make an AJAX call to Google Script
+  function insert_value() {
+
+    var name= "akhil";
+    var email= "email";
+    var subject= "ajjggs";
+    var message= "ujhwdw";
+   var url = script_url+"?callback=ctrlq&message="+message+"&subject="+subject+"&email="+email+"&name="+name+"&action=insert"; 
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+}
+
+</script>
+</html>
